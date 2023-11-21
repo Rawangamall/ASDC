@@ -1,7 +1,7 @@
 {
   "name": "task-one",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000A\u0000S\u0000D\u0000C\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "package-name": "^0.1.0"
   }
 }
