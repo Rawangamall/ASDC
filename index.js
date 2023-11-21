@@ -15,8 +15,7 @@ mongoose.set("strictQuery", true); //warning
 
 mongoose
 	.connect(
-		"mongodb+srv://OrderDispatching:iti@cluster0.eesrbrh.mongodb.net/?retryWrites=true&w=majority"
-	)
+        "mongodb://localhost:27017"	)
 	.then(() => {
 		console.log("DB connected");
 		server.listen(port, () => {
@@ -32,11 +31,9 @@ app.use(
 		origin: "*",
 	})
 );
+
 //body parse
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/images', express.static(path.join(__dirname, 'Core/images/User')));
 
 
 //routes
@@ -47,6 +44,7 @@ app.use((request, response, next) => {
 		.status(404)
 		.json({ message: `${request.originalUrl} not found on this server!` });
 });
+
 
 //Global error handeling Middleware
 app.use((error, request, response, next) => {
