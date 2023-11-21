@@ -6,9 +6,11 @@ require("dotenv").config({ path: "config.env" });
 const path=require("path");
 
 //import routes
-
+const ProductRoute = require('./Routes/ProductRoute')
 
 let port = process.env.PORT || 8080;
+const app = express();
+const server = require("http").createServer(app);
 
 //db connection
 mongoose.set("strictQuery", true); //warning
@@ -37,6 +39,7 @@ app.use(bodyParser.json());
 
 
 //routes
+app.use(ProductRoute);
 
 //Not Found Middleware
 app.use((request, response, next) => {
